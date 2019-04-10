@@ -1,10 +1,11 @@
 <html>
-    <head>
-            <title>Graduación Agos</title>
-            <link rel="stylesheet" type="text/css" href="./invitacionada.css">
-    </head>
 
-    <body>
+<head>
+        <title>Graduación Agos</title>
+        <link rel="stylesheet" type="text/css" href="./invitacionada.css">
+</head>
+
+<body>
 
         <div class="logo">
                 <img class="card-img-top" src="logoada.png">
@@ -13,40 +14,49 @@
         <div class="texto1"> ¡Hola! </div>
 
         <div class="texto2">
-            <p> Este sábado me recibo de Frontend Developer y lo quiero festejar con vos.</p>
+                <p> Este sábado me recibo de Frontend Developer y lo quiero festejar con vos.</p>
         </div>
 
         <div class="texto2">
                 <p> Completá el formulario si querés venir: </p>
-            </div>
-            <form action="guardar_usuario.html" name="login" id="check">
+        </div>
+        <form action="guardar_usuario.html" name="login" id="check">
 
-                    Nombre
-                    <input id="user" type="text" name="firstname" placeholder="Escribí tu nombre aca">
-            
-                    Edad
-                    <input id="user" type="text" name="firstname" placeholder="Escribí tu edad aca">
+                Nombre
+                <input id="user" type="text" name="firstname" placeholder="Escribí tu nombre aca">
 
-                    Estado civil
-                    <div class="check">
-                    <input type="checkbox" name="pet" value="cat" checked="checked"> Disponible
-                    <input type="checkbox" name="pet" value="dog" checked="checked"> No disponible
-                    </div> 
+                Edad
+                <input id="user" type="text" name="firstname" placeholder="Escribí tu edad aca">
 
-                    País
-                    <select class="select" name="Nacionalidad">
-                            <option value="ar"> Argentina
-                            </option>
-                            <option value="br"> Brasil
-                            </option>
-                            <option value="cl"> Chile
-                            </option>
-                        </select>
-                </form>
+                Estado civil
+                <div class="check">
+                <label class="container">Disponible
+                        <input type="radio" name="disp" value="si" checked> 
+                        <span class="checkmark"></span>
+                        
+                </label>
 
-                <input id="boton" type="submit" name="submit" value="Confirmo" />
+                <label class="container">No disponible
+                        <input type="radio" name="disp" value="no" checked> 
+                        <span class="checkmark"></span>
+                </label>
+                </div>
+                País
+                <select class="select" name="Nacionalidad">
+                        <option value="ar"> Argentina
+                        </option>
+                        <option value="br"> Brasil
+                        </option>
+                        <option value="cl"> Chile
+                        </option>
+                </select>
 
-    </body>
+                <input id="boton" type="submit" name="submit" value="Yo voy!" />
 
-    
+        </form>
+
+        
+</body>
+
+
 </html>
