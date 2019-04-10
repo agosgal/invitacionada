@@ -1,0 +1,62 @@
+body {
+    background: pink;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.texto1 { 
+    font-size:  100px;
+    max-width: 400px;
+    text-align: center;
+    margin:auto
+}
+
+.texto2 {    
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center
+}
+
+img {
+    width: 150px;
+    height: auto;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    display: flex
+}
+
+form input {
+    height: 20px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.check {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    margin-top: 20px;
+    font-size: 18px;
+    background: yellow;
+    justify-self: center
+}
+
+.select {
+    width: 500px;
+    margin-top: 20px
+}
+
+#boton {
+    align-content: end
+}
