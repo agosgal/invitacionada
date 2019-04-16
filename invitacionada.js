@@ -10,6 +10,7 @@ var lista = document.getElementById("lista")
 
 form.onsubmit = function(evento) {
     evento.preventDefault();
+    console.log("lalala")
     // Valido nombre
     if (nombre.value.length == 0) {
         nombre.classList.add("error"),
@@ -20,10 +21,16 @@ form.onsubmit = function(evento) {
         edad.classList.add("error"),
         edad.placeholder="  Acordate de escribir tu edad!";
     }
-    // Si eso está ok sigo, porque las otras dos no pueden estar vacías
+    // Si eso está ok sigo, porque las otras dos no pueden estar vacías.
+    // Llamo a la otra función
     if (nombre.value.length > 0 && edad.value>18) {
         var invitado = nombre.value;
+        console.log(invitado)
         var años = edad.value;
+        console.log(años);
+        var i = select.selectedIndex
+        var nacionalidad = select.options[i].value;
+        console.log(nacionalidad);
         // Traigo radio seleccionado
         var estado = "";
         if (soltero_form.checked) {
@@ -31,15 +38,22 @@ form.onsubmit = function(evento) {
         } else {
             estado = "No disponible"
         }
-        // Creo un párrafo dentro del div
-        var parrafo = document.createElement("p");
-        // Lo meto en el div
-        lista.appendChild(parrafo);
-        // Agrego la info
-        parrafo.innerHTML = ("Datos del invitado: " + invitado + " | " + años + " | " + estado + " |  " +select.options[select.selectedIndex].value)
+        console.log(estado)
+        agregarInvitado(invitado, años, estado, nacionalidad)
     }
 }
 
+function agregarInvitado(invitado, años, estado, nacionalidad){
+    // Creo un párrafo dentro del div
+        var parrafo = document.createElement("p");
+    //     // Lo meto en el div
+        lista.appendChild(parrafo);
+    return parrafo.innerHTML = ("Datos del invitado: " + invitado + " | " + años + " | " + estado + " |  " +select.options[select.selectedIndex].value)
+
+}
+
+
+   
 
 
 
