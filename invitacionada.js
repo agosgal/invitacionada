@@ -10,7 +10,6 @@ var lista = document.getElementById("lista")
 
 form.onsubmit = function(evento) {
     evento.preventDefault();
-    console.log("lalala")
     // Valido nombre
     if (nombre.value.length == 0) {
         nombre.classList.add("error"),
@@ -22,15 +21,12 @@ form.onsubmit = function(evento) {
         edad.placeholder="  Acordate de escribir tu edad!";
     }
     // Si eso está ok sigo, porque las otras dos no pueden estar vacías.
-    // Llamo a la otra función
     if (nombre.value.length > 0 && edad.value>18) {
+        // Defino variables
         var invitado = nombre.value;
-        console.log(invitado)
         var años = edad.value;
-        console.log(años);
         var i = select.selectedIndex
         var nacionalidad = select.options[i].value;
-        console.log(nacionalidad);
         // Traigo radio seleccionado
         var estado = "";
         if (soltero_form.checked) {
@@ -38,18 +34,41 @@ form.onsubmit = function(evento) {
         } else {
             estado = "No disponible"
         }
-        console.log(estado)
+        // Llamo a la función
         agregarInvitado(invitado, años, estado, nacionalidad)
     }
 }
 
-function agregarInvitado(invitado, años, estado, nacionalidad){
-    // Creo un párrafo dentro del div
-        var parrafo = document.createElement("p");
-    //     // Lo meto en el div
-        lista.appendChild(parrafo);
-    return parrafo.innerHTML = ("Datos del invitado: " + invitado + " | " + años + " | " + estado + " |  " +select.options[select.selectedIndex].value)
+// Función para agregar / sacar / editar invitados 
 
+function agregarInvitado(invitado, años, estado, nacionalidad){
+    // Creo un div dentro del div y le pongo estilo
+    var minidiv = document.createElement("div");
+    minidiv.classList.add("minidiv");
+    lista.appendChild(minidiv);
+    // Creo un párrafo y lo meto en el minidiv
+    var parrafo = document.createElement("p");
+        minidiv.appendChild(parrafo);
+        // Creo un botón y lo meto en el minidiv
+        var boton2 = document.createElement("button");
+        boton2.innerText = "BORRAR"
+        minidiv.appendChild(boton2);
+        // Lo hago borrar
+    boton2.addEventListener("click", function(){
+    boton2.remove();
+    minidiv.remove()
+    });
+    // Creo otro botón y lo meto en el minidiv
+    var boton3 = document.createElement("button");
+        boton3.innerText = "EDIT"
+        minidiv.appendChild(boton3);
+        // Lo hago editar
+    boton3.addEventListener("click", function(){
+        parrafo.contentEditable =true;
+        parrafo.classList.add("editable");
+        });
+    return parrafo.innerHTML = ("Datos del invitado: " + invitado + " | " + años + " | " + estado + " |  " +select.options[select.selectedIndex].value)
+    
 }
 
 

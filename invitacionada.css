@@ -169,5 +169,21 @@ form input {
 
 #lista {
   text-align: left;
-  color: white
+  color: black
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  background: white;
+  color: pink;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: none;
+}
+
+.minidiv {
+  display: flex;
+  direction: row;
 }
